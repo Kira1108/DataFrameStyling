@@ -5,6 +5,19 @@ It is a quite easy job, but you can learn something.
 *This table colorfy is implemented in v4 version*
 
 
+Usage
+```python
+mystyle = compose(
+    Beautify(caption = "This is a Pretty Table", cell_padding = '10px'),
+    RowColorfy(subset = ['A','B']),
+    ColumnColorfy(subset = ['C'], cmap = 'twilight'),
+    Colorfy(subset = ['D','E','F'], cmap = 'Spectral'),
+    HideIndex()
+)
+
+mystyle(df).to_html("very_beautiful_table.html")
+```
+
 Not implemented but a better way to normalize color scale with a center
 ```python
 import numpy as np
